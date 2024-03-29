@@ -6,7 +6,7 @@ public class Session {
 
     private List<Student> students;
 
-    public void Session() {
+    public Session() {
         students = new ArrayList<>();
     }
 

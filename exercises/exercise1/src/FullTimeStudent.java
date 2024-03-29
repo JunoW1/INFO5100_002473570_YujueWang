@@ -2,7 +2,7 @@ public class FullTimeStudent extends Student{
 
     private int[] examScore;
 
-    public void FullTimeStudent() {
+    public FullTimeStudent() {
         examScore = new int[2];
     }
 

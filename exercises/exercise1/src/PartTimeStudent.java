@@ -1,6 +1,6 @@
 public class PartTimeStudent extends Student{
 
-    public void PartTimeStudent() {
+    public PartTimeStudent() {
         this.setPartTime(true);
     }
 

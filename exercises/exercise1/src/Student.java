@@ -5,6 +5,10 @@ public class Student {
 
     private boolean isPartTime;
 
+    public Student() {
+        this.quizzScore = new int[15];
+    }
+
     public boolean isPartTime() {
         return isPartTime;
     }

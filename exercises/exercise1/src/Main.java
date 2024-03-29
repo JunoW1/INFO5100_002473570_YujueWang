@@ -14,13 +14,11 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             FullTimeStudent f = new FullTimeStudent();
             f.setName(generateName());
-            f.setQuizzScore(new int[15]);
             Random random = new Random();
             int[] quizScore = f.getQuizzScore();
             for(int j = 0; j < 15; j++) {
                 quizScore[j] = random.nextInt(40) + 60;
             }
-            f.setExamScore(new int[2]);
             int[] examScore = f.getExamScore();
             for(int j = 0; j < 2; j++) {
                 examScore[j] = random.nextInt(40) + 60;
@@ -31,9 +29,7 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             PartTimeStudent p = new PartTimeStudent();
             p.setName(generateName());
-            p.setPartTime(true);
             Random random = new Random();
-            p.setQuizzScore(new int[15]);
             int[] quizScore = p.getQuizzScore();
             for(int j = 0; j < 15; j++) {
                 quizScore[j] = random.nextInt(40) + 60;
