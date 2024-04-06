@@ -1,0 +1,24 @@
+{
+  "BookShelf": {
+    "Book": [
+      {
+        "title": "Java Programming",
+        "publishedYear": "2020",
+        "numberOfPages": "400",
+        "authors": ["John Doe"]
+      },
+      {
+        "title": "Data Structures and Algorithms",
+        "publishedYear": "2019",
+        "numberOfPages": "500",
+        "authors": ["Jane Smith", "Michael Johnson"]
+      },
+      {
+        "title": "Introduction to Python",
+        "publishedYear": "2021",
+        "numberOfPages": "300",
+        "authors": ["Alice Brown"]
+      }
+    ]
+  }
+}
