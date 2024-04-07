@@ -25,9 +25,25 @@ public class Main {
 
             System.out.println("Books from XML:");
             printBookShelf(xmlBookShelf);
+            xmlBookShelf.addBook(new Book("test", 1, 1, Arrays.asList("test")));
+            //parse bookShelf to xml and parse back to object
+//            System.out.println(xmlBookShelf.toXML());
+            BookShelf newXmlBookShelf = parseXML(xmlBookShelf.toXML());
+
+            //check the newly added book
+            System.out.println(newXmlBookShelf.getBooks().get(newXmlBookShelf.getBooks().size() - 1).toString());
+            System.out.println("==========================================");
+
 
             System.out.println("\nBooks from JSON:");
             printBookShelf(jsonBookShelf);
+            jsonBookShelf.addBook(new Book("test", 1, 1, Arrays.asList("test")));
+            //parse JsonBook Object to json after added new book
+            System.out.println(jsonBookShelf.toJSON());
+            BookShelf newJsonBookShelf = parseJSON(jsonBookShelf.toJSON());
+            //prse Json book back to object and test the newly added book
+            System.out.println(newJsonBookShelf.getBooks().get(newJsonBookShelf.getBooks().size() - 1).toString());
+
         } catch (IOException e) {
             e.printStackTrace();
         }

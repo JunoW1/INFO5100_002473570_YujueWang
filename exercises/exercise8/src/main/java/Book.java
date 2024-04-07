@@ -73,4 +73,14 @@ public class Book {
         xmlBuilder.append("</Book>");
         return xmlBuilder.toString();
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", publishedYear=" + publishedYear +
+                ", numberOfPages=" + numberOfPages +
+                ", authors=" + authors +
+                '}';
+    }
 }

@@ -21,14 +21,14 @@ public class BookShelf {
         return books;
     }
 
-    public JSONObject toJSON() {
+    public String toJSON() {
         JSONArray jsonBooks = new JSONArray();
         for (Book book : books) {
             jsonBooks.put(book.toJSON());
         }
         JSONObject jsonBookShelf = new JSONObject();
         jsonBookShelf.put("BookShelf", new JSONObject().put("Book", jsonBooks));
-        return jsonBookShelf;
+        return jsonBookShelf.toString().replaceAll("\\\\\"", "\"");
     }
 
     public String toXML() {
