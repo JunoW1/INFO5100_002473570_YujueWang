@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinalProject.controller.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#addPicture" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#convertFormat" text="Save As…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#close" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="About">
+          <items>
+            <MenuItem fx:id="github" mnemonicParsing="false" onAction="#Github_link" text="IMT_Github" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="app" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.9375" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="340.0">
+                     <children>
+                        <SplitPane dividerPositions="0.7264150943396226" layoutY="1.0" prefHeight="342.0" prefWidth="638.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane fx:id="rightPane" maxWidth="200.0" minHeight="355.0" minWidth="200.0">
+                                 <children>
+                                    <ImageView id="SmallImage" fx:id="thumbnailImage" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="52.0" layoutY="14.0" onMouseClicked="#addPicture" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="241.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="14.0">
+                                    </ImageView>
+                                    <Button id="Add" layoutX="39.0" layoutY="245.0" minHeight="27.0" minWidth="103.0" mnemonicParsing="false" onAction="#addPicture" prefHeight="29.0" prefWidth="113.0" text="Add Image" textAlignment="JUSTIFY" textFill="#f24c8c">
+                                       <font>
+                                          <Font name="System Italic" size="15.0" />
+                                       </font></Button>
+                                    <Button id="IF" layoutX="39.0" layoutY="314.0" mnemonicParsing="false" onAction="#imageFilter" prefHeight="29.0" prefWidth="112.0" text="Image Effect" textAlignment="JUSTIFY" textFill="#f24c8c">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Button>
+                                    <Button id="CF" layoutX="39.0" layoutY="280.0" mnemonicParsing="false" onAction="#convertFormat" prefHeight="29.0" prefWidth="113.0" text="Covert Format" textAlignment="JUSTIFY" textFill="#f24c8c">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Button>
+                                    <TextArea fx:id="info" editable="false" layoutX="3.0" layoutY="122.0" minHeight="116.0" minWidth="194.0" prefHeight="116.0" prefWidth="194.0" text="Image Info:" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="355.0" minWidth="365.0" prefHeight="355.0" prefWidth="365.0">
+                                 <children>
+                                    <ImageView id="previewImage" fx:id="previewImage" fitHeight="250.0" fitWidth="250.0" layoutX="75.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="88.0" AnchorPane.topAnchor="17.0">
+                                       <viewport>
+                                          <Rectangle2D />
+                                       </viewport></ImageView>
+                                    <AnchorPane fx:id="filter" layoutX="-3.0" layoutY="252.0" prefHeight="100.0" prefWidth="430.0">
+                                       <children>
+                                          <Button fx:id="Right" layoutX="121.0" layoutY="33.0" mnemonicParsing="false" onAction="#RightRotate" prefHeight="25.0" prefWidth="85.0" text="Right Rotate" textFill="#299df0" />
+                                          <Button fx:id="Left" layoutX="30.0" layoutY="33.0" mnemonicParsing="false" onAction="#LeftRotate" prefHeight="25.0" prefWidth="85.0" text="Left Rotate" textFill="#299df0" />
+                                          <Button fx:id="buttonRestore" layoutX="304.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleRestore" prefHeight="25.0" prefWidth="85.0" text="Restore" textFill="#299df0" />
+                                          <Button fx:id="buttonDesaturate" layoutX="212.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleDesaturate" prefHeight="25.0" prefWidth="85.0" text="Desaturate" textFill="#299df0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane disable="true" maxHeight="21.0" minHeight="21.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <Text id="Author" disable="true" layoutX="457.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author: Huijia Di, Yujue Wang" textAlignment="JUSTIFY" underline="true" AnchorPane.rightAnchor="0.88525390625" AnchorPane.topAnchor="5.0" />
+                        <Text id="ProgramName" disable="true" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Management Tool" textAlignment="JUSTIFY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
